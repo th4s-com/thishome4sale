@@ -62,8 +62,8 @@ export const listing = {
     { label: "Offer documentation", value: "Pre-approval / funds" },
   ],
   contact: {
-    /** Paste the Web3Forms access key between these quotes when it is available. */
-    web3formsAccessKey: "",
+    /** Web3Forms browser-side access key for buyer inquiry submissions. */
+    web3formsAccessKey: "83a7da91-ecb9-46cb-a8eb-5c840e05ba61",
     subject: "Buyer inquiry — 1210 Miremont Drive",
   },
   mapUrl:
