@@ -150,7 +150,7 @@
 .section-pad { padding: clamp(5rem, 9vw, 9rem) 6vw; }
 .section-index { font-size: .58rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: #6d7881; }
 .section-index--light { color: rgba(255,255,255,.46); }
-.intro { display: grid; grid-template-columns: 16% 52% 1fr; gap: 4vw; background: var(--paper) url('/manus-storage/renovation-ledger-texture_fe10e208.png') center/cover; }
+.intro { display: grid; grid-template-columns: 16% 52% 1fr; gap: 4vw; background: var(--paper) url('/images/renovation-ledger-texture.webp') center/cover; }
 .intro h2, .gallery h2, .location h2, .visit h2, .offer h2, .final-cta h2 { font: 600 clamp(3.2rem, 6vw, 6.8rem)/.9 "Barlow Condensed", sans-serif; letter-spacing: -.035em; text-transform: uppercase; }
 .intro__main > p { max-width: 46rem; margin-top: 2.5rem; font-size: clamp(1.05rem, 1.5vw, 1.32rem); line-height: 1.75; color: #52616d; }
 .intro__note { align-self: end; border-top: 1px solid var(--rule); padding-top: 1.3rem; display: flex; gap: .8rem; font-size: .78rem; line-height: 1.7; color: #5e6972; }
@@ -178,7 +178,7 @@
 .photo-grid__item--9 { grid-column: 10 / 13; grid-row: span 2; }
 .gallery__more { margin: 2rem 0 0 auto; }
 
-.highlights { background: var(--navy) url('/manus-storage/navy-blueprint-field_173d0169.png') center/cover; color: var(--cream); display: grid; grid-template-columns: 1fr 1.15fr; gap: 8vw; }
+.highlights { background: var(--navy) url('/images/navy-blueprint-field.webp') center/cover; color: var(--cream); display: grid; grid-template-columns: 1fr 1.15fr; gap: 8vw; }
 .highlights__title h2 { margin-top: 1.2rem; font: 600 clamp(3rem, 5.2vw, 6rem)/.9 "Barlow Condensed", sans-serif; letter-spacing: -.03em; text-transform: uppercase; }
 .highlights__list { border-top: 1px solid rgba(255,255,255,.22); }
 .highlight { display: grid; grid-template-columns: 44px minmax(130px, .8fr) 1.2fr; gap: 1.5rem; align-items: start; padding: 2rem 0; border-bottom: 1px solid rgba(255,255,255,.22); }

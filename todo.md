@@ -23,3 +23,14 @@
 - [x] Update metadata and deployment documentation to remove Zillow as the inquiry destination.
 - [x] Validate the revised desktop/mobile experience and production build.
 - [x] Save and deliver the revised project checkpoint.
+
+## Cloudflare Image-Path Repair
+
+- [x] Inventory every `/manus-storage/` reference used by the production site.
+- [x] Match each referenced image and logo to its original local source file.
+- [x] Copy deployment assets into `client/public/images/` using stable filenames.
+- [x] Replace all Manus-only paths with root-relative `/images/...` paths.
+- [x] Confirm all referenced assets are included in `dist/public/images/` after building.
+- [x] Run TypeScript validation and the production build.
+- [x] Verify the page and image requests visually in the local preview.
+- [x] Save a new checkpoint for GitHub and Cloudflare Pages.
