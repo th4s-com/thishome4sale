@@ -90,7 +90,6 @@ export const listing = {
     "/manus-storage/IMG_7553_210b067e.jpg",
     "/manus-storage/IMG_7552_09180146.jpg",
     "/manus-storage/IMG_7558_d18835fc.jpg",
-    "/manus-storage/IMG_7559_e7fc9241.jpg",
     "/manus-storage/IMG_7570_7cb64d9c.jpg",
   ],
   comingSoon: {
