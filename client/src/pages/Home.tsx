@@ -4,6 +4,7 @@
  * Oxford navy, warm paper, and disciplined renovation-green accents.
  */
 
+import ContactForm from "@/components/ContactForm";
 import PhotoLightbox from "@/components/PhotoLightbox";
 import { listing } from "@/content/listing";
 import {
@@ -35,8 +36,8 @@ function BrandHeader({ comingSoon = false }: { comingSoon?: boolean }) {
             <a href="#gallery">Photos</a>
             <a href="#location">Location</a>
           </nav>
-          <a className="header-cta" href={listing.zillowUrl} target="_blank" rel="noreferrer">
-            View Zillow <ArrowUpRight size={15} />
+          <a className="header-cta" href="#contact">
+            Contact owner <ArrowDown size={15} />
           </a>
         </>
       )}
@@ -94,7 +95,7 @@ export default function Home() {
   useEffect(() => {
     const description = listing.status === "coming-soon"
       ? listing.comingSoon.text
-      : `${listing.price} · 3 bedrooms · 1,380 sq. ft. · Open house ${listing.openHouse.date}, ${listing.openHouse.time}.`;
+      : `${listing.price} · 3 bedrooms · 2.5 bathrooms · approximately 1,400 sq. ft. · Basement bonus room · Open house ${listing.openHouse.date}, ${listing.openHouse.time}.`;
     document.title = listing.status === "coming-soon"
       ? "A New Renovation Is Coming Soon | ThisHome4Sale.com"
       : `${listing.address.street} | For Sale By Owner`;
@@ -123,8 +124,8 @@ export default function Home() {
         addressCountry: "US",
       },
       numberOfBedrooms: 3,
-      numberOfBathroomsTotal: 2,
-      floorSize: { "@type": "QuantitativeValue", value: 1380, unitCode: "FTK" },
+      numberOfBathroomsTotal: 2.5,
+      floorSize: { "@type": "QuantitativeValue", value: 1400, unitCode: "FTK" },
       yearBuilt: 1965,
       offers: { "@type": "Offer", price: 399900, priceCurrency: "USD", availability: "https://schema.org/InStock" },
     };
@@ -168,8 +169,8 @@ export default function Home() {
             </div>
             <div className="hero__bottom">
               <p className="price">{listing.price}</p>
-              <a className="button button--green" href={listing.zillowUrl} target="_blank" rel="noreferrer">
-                Contact seller on Zillow <ArrowUpRight size={18} />
+              <a className="button button--green" href="#contact">
+                Contact the owner <ArrowDown size={18} />
               </a>
             </div>
           </div>
@@ -298,16 +299,19 @@ export default function Home() {
           <p>{listing.offerGuidelines}</p>
         </section>
 
-        <section className="final-cta section-pad">
-          <div className="final-cta__mark">1210</div>
-          <div className="final-cta__copy">
+        <section className="contact-section section-pad" id="contact">
+          <div className="contact-section__intro">
+            <p className="section-index section-index--light">08 / CONTACT OWNER</p>
             <p className="eyebrow eyebrow--green">For Sale By Owner</p>
-            <h2>Review the record.<br />Contact the owner.</h2>
-            <p>{listing.price} · {listing.address.street}</p>
-            <a className="button button--green" href={listing.zillowUrl} target="_blank" rel="noreferrer">
-              Open Zillow & contact seller <ArrowUpRight size={18} />
-            </a>
+            <h2>Ask about<br />1210 Miremont.</h2>
+            <p>Request a private showing, ask a property question, or begin a conversation about submitting an offer directly with the owner.</p>
+            <div className="contact-section__record">
+              <span>{listing.price}</span>
+              <span>{listing.address.street}</span>
+              <span>Ballwin · Missouri</span>
+            </div>
           </div>
+          <ContactForm />
         </section>
       </main>
 
@@ -317,8 +321,8 @@ export default function Home() {
         <p>© 2026 ThisHome4Sale.com</p>
       </footer>
 
-      <a className="mobile-cta" href={listing.zillowUrl} target="_blank" rel="noreferrer">
-        Contact seller <ArrowUpRight size={17} />
+      <a className="mobile-cta" href="#contact">
+        Contact owner <ArrowDown size={17} />
       </a>
 
       <PhotoLightbox images={listing.images} index={photoIndex} onChange={setPhotoIndex} />

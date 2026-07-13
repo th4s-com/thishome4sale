@@ -15,7 +15,7 @@ Use these build settings:
 | Root directory | Leave blank |
 | Node.js version | 22 |
 
-No runtime environment variables, database, API keys, or server functions are required. The `_redirects` and `_headers` files are already included for Cloudflare Pages routing and browser-security defaults.
+No database or server functions are required. The Web3Forms browser access key is entered once in `client/src/content/listing.ts`; see `WEB3FORMS_SETUP.md`. The `_redirects` and `_headers` files are already included for Cloudflare Pages routing and browser-security defaults.
 
 ## Connect thishome4sale.com
 
@@ -49,5 +49,4 @@ The current property photographs use stable hosted asset URLs. For a future hous
 
 ## Pre-launch check
 
-Before pointing the domain at the new Pages deployment, verify the price, address, open-house date, square footage, Zillow URL, school references, and offer language. The project has already passed TypeScript and production-build validation with `dist/public` confirmed as the deployable output.
-
+Before pointing the domain at the new Pages deployment, verify the price, address, open-house date, square footage, school references, offer language, map link, and Web3Forms inquiry delivery. The project has already passed TypeScript and production-build validation with `dist/public` confirmed as the deployable output.

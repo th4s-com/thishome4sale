@@ -23,15 +23,15 @@ export const listing = {
   },
   facts: [
     { value: "3", label: "Bedrooms" },
-    { value: "2", label: "Bathrooms" },
-    { value: "1,380", label: "Sq. Ft." },
+    { value: "2.5", label: "Bathrooms" },
+    { value: "~1,400", label: "Sq. Ft." },
     { value: "0.23", label: "Acre Lot" },
     { value: "1965", label: "Built" },
     { value: "2026", label: "Renovated" },
   ],
   headline: "Reworked for the way you live now.",
   description:
-    "A freshly renovated split-level in the heart of West County, pairing a functional layout with modern finishes and a location that keeps everyday errands, parks, and Parkway schools close at hand.",
+    "A freshly renovated split-level in the heart of West County, pairing approximately 1,400 square feet with modern finishes, a flexible basement bonus room, and a location that keeps everyday errands, parks, and Parkway schools close at hand.",
   highlights: [
     {
       number: "01",
@@ -45,6 +45,11 @@ export const listing = {
     },
     {
       number: "03",
+      title: "Bonus room below",
+      text: "A finished basement bonus room adds flexible space for work, play, media, or guests.",
+    },
+    {
+      number: "04",
       title: "Parkway schools",
       text: "Located near Pierremont Elementary, Parkway West Middle, and Parkway West High School.",
     },
@@ -56,8 +61,11 @@ export const listing = {
     { label: "School community", value: "Parkway" },
     { label: "Offer documentation", value: "Pre-approval / funds" },
   ],
-  zillowUrl:
-    "https://www.zillow.com/homedetails/1210-Miremont-Dr-Ballwin-MO-63011/2807056_zpid/",
+  contact: {
+    /** Paste the Web3Forms access key between these quotes when it is available. */
+    web3formsAccessKey: "",
+    subject: "Buyer inquiry — 1210 Miremont Drive",
+  },
   mapUrl:
     "https://www.google.com/maps/search/?api=1&query=1210+Miremont+Drive+Ballwin+MO+63011",
   offerGuidelines:
