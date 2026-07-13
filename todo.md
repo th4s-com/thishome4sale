@@ -62,4 +62,4 @@
 - [x] Confirm the new instructions are readable and unambiguous.
 - [x] Run TypeScript validation and the production build.
 - [x] Verify the revised section on desktop and mobile.
-- [ ] Save and deliver the revised GitHub-ready checkpoint.
+- [x] Save and deliver the revised GitHub-ready checkpoint.
