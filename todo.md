@@ -34,3 +34,13 @@
 - [x] Run TypeScript validation and the production build.
 - [x] Verify the page and image requests visually in the local preview.
 - [x] Save a new checkpoint for GitHub and Cloudflare Pages.
+
+## Open-House Visibility and Neighborhood Clarification
+
+- [x] Audit every place the open-house date and Waycliffe Estates label appear.
+- [x] Verify whether Waycliffe Estates is an official subdivision or an inaccurate neighborhood reference.
+- [x] Redesign the open-house announcement so “July 19” is prominent on desktop and mobile.
+- [x] Revise neighborhood copy based on verified information.
+- [x] Run TypeScript and production-build validation.
+- [x] Verify the revised design at desktop and mobile breakpoints.
+- [x] Save and deliver the revised GitHub-ready checkpoint.

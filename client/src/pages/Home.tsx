@@ -150,11 +150,16 @@ export default function Home() {
       <main>
         {listing.openHouse.enabled && (
           <a className="open-house-bar" href="#visit">
-            <CalendarDays size={18} />
-            <strong>Open House</strong>
-            <span>{listing.openHouse.date}</span>
+            <span className="open-house-bar__label">
+              <CalendarDays size={19} />
+              <strong>Open House</strong>
+            </span>
+            <span className="open-house-bar__date">
+              <small>{listing.openHouse.weekday}</small>
+              <strong>{listing.openHouse.month} {listing.openHouse.day}</strong>
+            </span>
             <span className="open-house-bar__time">{listing.openHouse.time}</span>
-            <ArrowDown size={16} />
+            <span className="open-house-bar__link">View details <ArrowDown size={16} /></span>
           </a>
         )}
 
@@ -246,7 +251,7 @@ export default function Home() {
             <p className="section-index">04 / LOCATION</p>
             <p className="eyebrow">{listing.neighborhood}</p>
             <h2>At home in<br />West County.</h2>
-            <p>Well placed for shopping, parks, commuter routes, and the Parkway school community.</p>
+            <p><strong>Waycliffe Estates is the established residential subdivision around Miremont Drive</strong> in the Ballwin–Manchester area of West County, well placed for shopping, parks, commuter routes, and the Parkway school community.</p>
             <div className="location__actions">
               <a className="button button--navy" href={listing.mapUrl} target="_blank" rel="noreferrer">
                 Open in Maps <MapPin size={17} />
@@ -266,13 +271,16 @@ export default function Home() {
         <section className="visit section-pad" id="visit">
           <div className="visit__date">
             <p className="section-index">05 / COME THROUGH</p>
-            <span>{listing.openHouse.month}</span>
-            <strong>{listing.openHouse.day}</strong>
+            <div className="visit__calendar">
+              <span>{listing.openHouse.month}</span>
+              <strong>{listing.openHouse.day}</strong>
+              <small>{listing.openHouse.weekday}</small>
+            </div>
           </div>
           <div className="visit__copy">
-            <p className="eyebrow">Open House · Sunday</p>
+            <p className="eyebrow">Open House · {listing.openHouse.weekday}</p>
             <h2>See it in person.</h2>
-            <p>Tour the renovation, walk the layout, and explore the Waycliffe Estates setting.</p>
+            <p>Tour the renovation, walk the layout, and explore the established West County neighborhood in person.</p>
             <div className="visit__actions">
               <a className="button button--green" href={listing.mapUrl} target="_blank" rel="noreferrer">
                 Get directions <ExternalLink size={17} />

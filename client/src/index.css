@@ -116,10 +116,13 @@
 .header-cta:hover { background: #62ef74; transform: translateY(-2px); }
 .header-cta:active, .button:active, .icon-button:active { transform: scale(.97); }
 
-.open-house-bar { min-height: 52px; padding: .65rem 4vw; background: var(--green); color: var(--navy); display: flex; align-items: center; justify-content: center; gap: .9rem; text-decoration: none; text-transform: uppercase; font-size: .73rem; letter-spacing: .12em; }
-.open-house-bar strong { font-weight: 800; }
-.open-house-bar span { padding-left: .9rem; border-left: 1px solid rgba(19,40,61,.35); }
-.open-house-bar__time { font-weight: 800; }
+.open-house-bar { min-height: 84px; padding: 0 4vw; background: var(--green); color: var(--navy); display: flex; align-items: stretch; justify-content: center; text-decoration: none; text-transform: uppercase; }
+.open-house-bar__label { padding-right: 2rem; display: flex; align-items: center; gap: .65rem; font-size: .7rem; font-weight: 800; letter-spacing: .14em; }
+.open-house-bar__date { min-height: 84px; padding: .65rem 2rem; background: var(--navy); color: var(--cream); display: flex; align-items: center; gap: .8rem; }
+.open-house-bar__date small { color: var(--green); font-size: .6rem; font-weight: 800; letter-spacing: .16em; }
+.open-house-bar__date strong { font: 600 2.35rem/.82 "Barlow Condensed", sans-serif; letter-spacing: .01em; }
+.open-house-bar__time { padding: 0 2rem; border-right: 1px solid rgba(19,40,61,.25); display: flex; align-items: center; font: 700 1.25rem/1 "Barlow Condensed", sans-serif; letter-spacing: .04em; }
+.open-house-bar__link { padding-left: 2rem; display: flex; align-items: center; gap: .55rem; font-size: .62rem; font-weight: 800; letter-spacing: .12em; }
 
 .hero { min-height: calc(100vh - 164px); display: grid; grid-template-columns: 43% 1fr 42px; background: var(--navy); }
 .hero__copy { color: var(--cream); padding: clamp(3rem, 7vw, 7rem) 4vw 4rem; display: flex; flex-direction: column; justify-content: space-between; gap: 4rem; }
@@ -206,10 +209,12 @@
 .location__graphic p { position: absolute; right: 1.5rem; bottom: 1.5rem; font-size: .58rem; line-height: 1.6; letter-spacing: .12em; font-weight: 800; }
 
 .visit { background: var(--cream); display: grid; grid-template-columns: .65fr 1.2fr; gap: 9vw; }
-.visit__date { display: grid; grid-template-columns: 1fr auto; border-top: 1px solid var(--rule); padding-top: 1.2rem; }
-.visit__date .section-index { grid-column: 1/-1; margin-bottom: 3rem; }
-.visit__date > span { align-self: end; writing-mode: vertical-rl; transform: rotate(180deg); font-size: .7rem; letter-spacing: .18em; font-weight: 800; }
-.visit__date > strong { font: 600 clamp(8rem, 19vw, 18rem)/.68 "Barlow Condensed", sans-serif; letter-spacing: -.08em; }
+.visit__date { border-top: 1px solid var(--rule); padding-top: 1.2rem; }
+.visit__date .section-index { margin-bottom: 2rem; }
+.visit__calendar { width: min(100%, 440px); padding: 1.35rem 1.6rem 1.5rem; border-left: .8rem solid var(--green); background: var(--navy); color: var(--cream); display: grid; grid-template-columns: 1fr auto; align-items: end; box-shadow: 14px 14px 0 rgba(19,40,61,.1); }
+.visit__calendar > span { grid-column: 1 / -1; color: var(--green); font: 600 clamp(3.5rem, 7vw, 6.4rem)/.82 "Barlow Condensed", sans-serif; letter-spacing: .035em; }
+.visit__calendar > strong { font: 600 clamp(9rem, 17vw, 16rem)/.7 "Barlow Condensed", sans-serif; letter-spacing: -.07em; }
+.visit__calendar > small { padding-bottom: .45rem; font-size: .65rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; writing-mode: vertical-rl; transform: rotate(180deg); }
 .visit__copy { padding-top: 4rem; }
 .visit__copy h2 { margin: 1rem 0 2rem; }
 .visit__copy > p:not(.eyebrow) { max-width: 34rem; color: #5f6a74; line-height: 1.75; }
@@ -322,9 +327,12 @@
   .site-header { padding: 0 1rem; }
   .header-cta { min-height: 42px; padding: .7rem .8rem; font-size: .6rem; }
   .header-cta svg { display: none; }
-  .open-house-bar { justify-content: flex-start; padding: .7rem 1rem; flex-wrap: wrap; gap: .45rem .7rem; }
-  .open-house-bar svg:last-child { display: none; }
-  .open-house-bar span { padding-left: .7rem; }
+  .open-house-bar { min-height: 0; padding: 0; display: grid; grid-template-columns: 1fr auto; }
+  .open-house-bar__label { grid-column: 1 / -1; min-height: 42px; padding: .55rem 1rem; border-bottom: 1px solid rgba(19,40,61,.2); }
+  .open-house-bar__date { min-height: 74px; padding: .55rem 1rem; justify-content: flex-start; }
+  .open-house-bar__date strong { font-size: 2.2rem; }
+  .open-house-bar__time { min-height: 74px; padding: 0 1rem; border: 0; background: var(--navy); color: var(--green); font-size: 1.05rem; }
+  .open-house-bar__link { display: none; }
   .hero__copy { padding: 3.5rem 1.25rem 2.5rem; min-height: 500px; }
   .hero h1 { font-size: clamp(3.9rem, 18vw, 5.6rem); }
   .hero__image { min-height: 96vw; }
@@ -347,7 +355,9 @@
   .location__graphic { min-height: 380px; }
   .map-ring--one { width: 260px; height: 260px; }
   .map-ring--two { width: 380px; height: 380px; }
-  .visit__date > strong { font-size: 55vw; }
+  .visit__calendar { padding: 1.1rem 1.2rem 1.3rem; box-shadow: 9px 9px 0 rgba(19,40,61,.1); }
+  .visit__calendar > span { font-size: clamp(3.5rem, 19vw, 5.4rem); }
+  .visit__calendar > strong { font-size: clamp(9rem, 48vw, 13rem); }
   .visit__copy { padding-top: 0; }
   .visit__actions { align-items: flex-start; flex-direction: column; }
   .property-record { grid-template-columns: 1fr; }

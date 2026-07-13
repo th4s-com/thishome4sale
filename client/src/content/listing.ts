@@ -18,7 +18,8 @@ export const listing = {
     enabled: true,
     date: "Sunday, July 19",
     time: "1:00–3:00 PM",
-    month: "JUL",
+    weekday: "Sunday",
+    month: "JULY",
     day: "19",
   },
   facts: [
@@ -54,7 +55,7 @@ export const listing = {
       text: "Located near Pierremont Elementary, Parkway West Middle, and Parkway West High School.",
     },
   ],
-  neighborhood: "Waycliffe Estates",
+  neighborhood: "Waycliffe Estates · Residential subdivision",
   record: [
     { label: "Sale route", value: "Direct from owner" },
     { label: "Open house", value: "Sun · Jul 19 · 1–3 PM" },
