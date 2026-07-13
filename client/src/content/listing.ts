@@ -55,7 +55,7 @@ export const listing = {
       text: "Located near Pierremont Elementary, Parkway West Middle, and Parkway West High School.",
     },
   ],
-  neighborhood: "Waycliffe Estates · Residential subdivision",
+  neighborhood: "West County · Parkway community",
   record: [
     { label: "Sale route", value: "Direct from owner" },
     { label: "Open house", value: "Sun · Jul 19 · 1–3 PM" },

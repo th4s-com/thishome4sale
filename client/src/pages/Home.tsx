@@ -251,7 +251,7 @@ export default function Home() {
             <p className="section-index">04 / LOCATION</p>
             <p className="eyebrow">{listing.neighborhood}</p>
             <h2>At home in<br />West County.</h2>
-            <p><strong>Waycliffe Estates is the established residential subdivision around Miremont Drive</strong> in the Ballwin–Manchester area of West County, well placed for shopping, parks, commuter routes, and the Parkway school community.</p>
+            <p><strong>Conveniently located in West County,</strong> with access to shopping, parks, commuter routes, and the Parkway school community.</p>
             <div className="location__actions">
               <a className="button button--navy" href={listing.mapUrl} target="_blank" rel="noreferrer">
                 Open in Maps <MapPin size={17} />

@@ -44,3 +44,12 @@
 - [x] Run TypeScript and production-build validation.
 - [x] Verify the revised design at desktop and mobile breakpoints.
 - [x] Save and deliver the revised GitHub-ready checkpoint.
+
+## Remove Incorrect Waycliffe Estates Reference
+
+- [x] Locate every Waycliffe and Waycliff reference in production source and metadata.
+- [x] Remove the subdivision designation and replace it with neutral West County location language.
+- [x] Confirm no Waycliffe or Waycliff references remain in the production site.
+- [x] Run TypeScript validation and the production build.
+- [x] Verify the corrected location section on desktop and mobile.
+- [x] Save and deliver the corrected GitHub-ready checkpoint.
