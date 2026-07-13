@@ -53,3 +53,13 @@
 - [x] Run TypeScript validation and the production build.
 - [x] Verify the corrected location section on desktop and mobile.
 - [x] Save and deliver the corrected GitHub-ready checkpoint.
+
+## Title Resources and Earnest-Money Instructions
+
+- [x] Audit the current “Prepared offers move efficiently” content and layout.
+- [x] Add Title Resources Inc. and the Kirkwood office address exactly as provided.
+- [x] State the minimum 1% earnest-money requirement payable to Title Resources Inc.
+- [x] Confirm the new instructions are readable and unambiguous.
+- [x] Run TypeScript validation and the production build.
+- [x] Verify the revised section on desktop and mobile.
+- [ ] Save and deliver the revised GitHub-ready checkpoint.

@@ -304,7 +304,25 @@ export default function Home() {
           <div>
             <h2>Prepared offers<br />move efficiently.</h2>
           </div>
-          <p>{listing.offerGuidelines}</p>
+          <div className="offer__details">
+            <p>{listing.offerGuidelines.introduction}</p>
+            <div className="offer__requirements" aria-label="Closing and earnest-money requirements">
+              <article>
+                <span>Closing &amp; title</span>
+                <strong>{listing.offerGuidelines.titleCompany.name}</strong>
+                <address>
+                  {listing.offerGuidelines.titleCompany.office}<br />
+                  {listing.offerGuidelines.titleCompany.street}<br />
+                  {listing.offerGuidelines.titleCompany.cityStateZip}
+                </address>
+              </article>
+              <article>
+                <span>Earnest money</span>
+                <strong>{listing.offerGuidelines.earnestMoney.amount}</strong>
+                <p>{listing.offerGuidelines.earnestMoney.payableTo}</p>
+              </article>
+            </div>
+          </div>
         </section>
 
         <section className="contact-section section-pad" id="contact">

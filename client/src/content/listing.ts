@@ -69,8 +69,20 @@ export const listing = {
   },
   mapUrl:
     "https://www.google.com/maps/search/?api=1&query=1210+Miremont+Drive+Ballwin+MO+63011",
-  offerGuidelines:
-    "All offers must be submitted with either a current lender pre-approval letter or proof of funds for cash purchases. Pre-qualification letters will not be accepted. The seller may verify financing information and will consider the strength of the financing terms and likelihood of closing when evaluating offers.",
+  offerGuidelines: {
+    introduction:
+      "All offers must be submitted with either a current lender pre-approval letter or proof of funds for cash purchases. Pre-qualification letters will not be accepted. The seller may verify financing information and will consider the strength of the financing terms and likelihood of closing when evaluating offers.",
+    titleCompany: {
+      name: "Title Resources Inc.",
+      office: "Kirkwood Office",
+      street: "214 N Clay Ave Suite 100",
+      cityStateZip: "Kirkwood, MO 63122",
+    },
+    earnestMoney: {
+      amount: "Minimum 1% of purchase price",
+      payableTo: "Made payable to Title Resources Inc.",
+    },
+  },
   logo: "/images/logo.png",
   images: [
     "/images/IMG_7624.jpg",
