@@ -305,10 +305,13 @@ export default function Home() {
             <h2>Prepared offers<br />move efficiently.</h2>
           </div>
           <div className="offer__details">
-            <p>{listing.offerGuidelines.introduction}</p>
-            <div className="offer__requirements" aria-label="Closing and earnest-money requirements">
+            <div className="offer__requirements" aria-label="Financing, preferred title company, and buyer-agent information">
               <article>
-                <span>Closing &amp; title</span>
+                <span>{listing.offerGuidelines.financing.title}</span>
+                <p>{listing.offerGuidelines.financing.details}</p>
+              </article>
+              <article>
+                <span>{listing.offerGuidelines.titleCompany.title}</span>
                 <strong>{listing.offerGuidelines.titleCompany.name}</strong>
                 <address>
                   {listing.offerGuidelines.titleCompany.office}<br />
@@ -317,9 +320,8 @@ export default function Home() {
                 </address>
               </article>
               <article>
-                <span>Earnest money</span>
-                <strong>{listing.offerGuidelines.earnestMoney.amount}</strong>
-                <p>{listing.offerGuidelines.earnestMoney.payableTo}</p>
+                <span>{listing.offerGuidelines.buyerAgentCompensation.title}</span>
+                <strong>{listing.offerGuidelines.buyerAgentCompensation.details}</strong>
               </article>
             </div>
           </div>

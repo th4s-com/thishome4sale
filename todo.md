@@ -63,3 +63,13 @@
 - [x] Run TypeScript validation and the production build.
 - [x] Verify the revised section on desktop and mobile.
 - [x] Save and deliver the revised GitHub-ready checkpoint.
+
+## Financing and Buyer-Agent Offer Revision
+
+- [x] Audit the current financing, title-company, and earnest-money presentation.
+- [x] Replace the financing language with the client-provided wording.
+- [x] Rename the title section to “Preferred Title Company” and update its address formatting.
+- [x] Replace the earnest-money block with “Buyer’s Agent Compensation — Buyer agents are welcome.”
+- [x] Run TypeScript validation and the production build.
+- [x] Verify the revised offer section on desktop and mobile.
+- [x] Save and deliver the synchronized GitHub-ready checkpoint.

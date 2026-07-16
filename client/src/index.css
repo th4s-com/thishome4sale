@@ -230,12 +230,11 @@
 .offer { background: #e5e0d7; display: grid; grid-template-columns: 14% 1fr .75fr; gap: 5vw; align-items: start; }
 .offer h2 { font-size: clamp(2.8rem, 5vw, 5.6rem); }
 .offer__details { padding-top: .3rem; }
-.offer__details > p { line-height: 1.8; font-size: .86rem; color: #53616b; }
-.offer__requirements { margin-top: 2rem; border-top: 1px solid rgba(19,40,61,.28); }
+.offer__requirements { border-top: 1px solid rgba(19,40,61,.28); }
 .offer__requirements article { padding: 1.35rem 0; border-bottom: 1px solid rgba(19,40,61,.28); }
 .offer__requirements span { display: block; margin-bottom: .65rem; color: #687681; font-size: .56rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
 .offer__requirements strong { display: block; color: var(--navy); font: 600 clamp(1.35rem, 2vw, 1.85rem)/1.05 "Barlow Condensed", sans-serif; text-transform: uppercase; }
-.offer__requirements address, .offer__requirements article > p { margin-top: .65rem; color: #53616b; font-size: .78rem; font-style: normal; line-height: 1.65; }
+.offer__requirements address, .offer__requirements article > p { margin-top: .65rem; color: #53616b; font-size: .82rem; font-style: normal; line-height: 1.7; }
 .final-cta { min-height: 660px; background: var(--navy); color: var(--cream); position: relative; overflow: hidden; display: flex; align-items: center; }
 .final-cta::after { content: ""; width: 22vw; height: 100%; background: var(--green); position: absolute; right: 0; top: 0; }
 .final-cta__mark { position: absolute; right: 4vw; bottom: -3vw; z-index: 1; color: var(--navy); font: 700 clamp(8rem, 22vw, 22rem)/.8 "Barlow Condensed", sans-serif; letter-spacing: -.08em; writing-mode: vertical-rl; transform: rotate(180deg); opacity: .94; }
