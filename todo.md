@@ -145,3 +145,10 @@
 - [x] Add Beth Muckerman’s listing-agent contact details below the buyer-agent welcome message.
 - [x] Validate the production build and desktop/mobile presentation.
 - [x] Save and deliver the synchronized GitHub-ready checkpoint.
+
+## Zillow QR Code Replacement
+
+- [x] Confirm the current brochure QR asset target and supplied replacement file.
+- [x] Replace the Zillow QR image and rebuild the one-page brochure.
+- [x] Verify the printable PDF and replace the hosted Pages asset.
+- [x] Save and deliver the synchronized GitHub-ready checkpoint.
