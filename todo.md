@@ -121,3 +121,12 @@
 - [x] Replace the deployed Pages PDF and clarify the on-site download context.
 - [x] Validate the revised PDF URL, production build, and responsive listing link.
 - [x] Save and deliver the synchronized GitHub-ready checkpoint.
+
+## Single-Sheet Owner Brochure Revision
+
+- [x] Audit the current brochure’s wording and page flow for unnecessary Zillow references.
+- [x] Simplify authorship to ThisHome4Sale / property owner and retain only a concise Zillow verification link.
+- [x] Reflow the property details and features into one clean US-letter printable sheet.
+- [x] Compile, verify, and visually inspect the revised one-page PDF.
+- [x] Replace the hosted Pages PDF and validate the listing download link.
+- [x] Save and deliver the synchronized GitHub-ready checkpoint.
