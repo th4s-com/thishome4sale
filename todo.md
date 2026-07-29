@@ -130,3 +130,11 @@
 - [x] Compile, verify, and visually inspect the revised one-page PDF.
 - [x] Replace the hosted Pages PDF and validate the listing download link.
 - [x] Save and deliver the synchronized GitHub-ready checkpoint.
+
+## QR Code Brochure Addition
+
+- [x] Plan a readable, scan-safe placement for both supplied QR codes within the one-page brochure.
+- [x] Add the ThisHome4Sale and Zillow QR assets with clear labels.
+- [x] Compile, verify, and visually inspect the printable one-page PDF.
+- [x] Replace the hosted Pages PDF and validate the listing download link.
+- [x] Save and deliver the synchronized GitHub-ready checkpoint.
