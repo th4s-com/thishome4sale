@@ -104,3 +104,10 @@
 - [x] Add a clearly labeled download link to the listing page.
 - [x] Validate the document link, production build, and responsive presentation.
 - [x] Save and deliver the synchronized GitHub-ready checkpoint and hosting guidance.
+
+## PDF Link Visibility Correction
+
+- [x] Inspect the published listing and confirm whether the PDF URL is reachable.
+- [x] Add a second, immediately visible PDF access point if the hero action is not discoverable.
+- [x] Validate the revised link on desktop, mobile, and the public deployment.
+- [x] Save and deliver the corrected synchronized GitHub-ready checkpoint.

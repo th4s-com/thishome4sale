@@ -36,6 +36,7 @@ function BrandHeader({ comingSoon = false }: { comingSoon?: boolean }) {
             <a href="#details">Details</a>
             <a href="#gallery">Photos</a>
             <a href="#location">Location</a>
+            <a href={listing.brochure.href} download>Printable PDF</a>
           </nav>
           <a className="header-cta" href="#contact">
             Contact owner <ArrowDown size={15} />
