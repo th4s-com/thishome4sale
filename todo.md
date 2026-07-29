@@ -111,3 +111,13 @@
 - [x] Add a second, immediately visible PDF access point if the hero action is not discoverable.
 - [x] Validate the revised link on desktop, mobile, and the public deployment.
 - [x] Save and deliver the corrected synchronized GitHub-ready checkpoint.
+
+## Owner-Authored Brochure Attribution Revision
+
+- [x] Audit the existing brochure’s ownership, authorship, and Zillow-source language.
+- [x] Identify the Zillow URL and revise the brochure as an owner-authored ThisHome4Sale document.
+- [x] Retain the owner-authorized site photography and cite Zillow only as a public fact-reference source.
+- [x] Rebuild and visually verify the printable PDF.
+- [x] Replace the deployed Pages PDF and clarify the on-site download context.
+- [x] Validate the revised PDF URL, production build, and responsive listing link.
+- [x] Save and deliver the synchronized GitHub-ready checkpoint.
