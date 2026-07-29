@@ -95,7 +95,7 @@ export default function Home() {
   useEffect(() => {
     const description = listing.status === "coming-soon"
       ? listing.comingSoon.text
-      : `${listing.price} · 3 bedrooms · 2.5 bathrooms · approximately 1,400 sq. ft. · Basement bonus room · Open house ${listing.openHouse.date}, ${listing.openHouse.time}.`;
+      : `${listing.price} · 3 bedrooms · 2.5 bathrooms · approximately 1,400 sq. ft. · Basement bonus room.`;
     document.title = listing.status === "coming-soon"
       ? "A New Renovation Is Coming Soon | ThisHome4Sale.com"
       : `${listing.address.street} | For Sale By Owner`;
@@ -153,10 +153,6 @@ export default function Home() {
             <span className="open-house-bar__label">
               <CalendarDays size={19} />
               <strong>Open House</strong>
-            </span>
-            <span className="open-house-bar__date">
-              <small>{listing.openHouse.weekday}</small>
-              <strong>{listing.openHouse.month} {listing.openHouse.day}</strong>
             </span>
             <span className="open-house-bar__time">{listing.openHouse.time}</span>
             <span className="open-house-bar__link">View details <ArrowDown size={16} /></span>
@@ -270,15 +266,14 @@ export default function Home() {
 
         <section className="visit section-pad" id="visit">
           <div className="visit__date">
-            <p className="section-index">05 / COME THROUGH</p>
-            <div className="visit__calendar">
-              <span>{listing.openHouse.month}</span>
-              <strong>{listing.openHouse.day}</strong>
-              <small>{listing.openHouse.weekday}</small>
+            <p className="section-index">05 / OPEN HOUSE</p>
+            <div className="visit__marker" aria-hidden="true">
+              <span>OPEN</span>
+              <strong>HOUSE</strong>
             </div>
           </div>
           <div className="visit__copy">
-            <p className="eyebrow">Open House · {listing.openHouse.weekday}</p>
+            <p className="eyebrow">Open House</p>
             <h2>See it in person.</h2>
             <p>Tour the renovation, walk the layout, and explore the established West County neighborhood in person.</p>
             <div className="visit__actions">

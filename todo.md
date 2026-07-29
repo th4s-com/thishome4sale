@@ -73,3 +73,12 @@
 - [x] Run TypeScript validation and the production build.
 - [x] Verify the revised offer section on desktop and mobile.
 - [x] Save and deliver the synchronized GitHub-ready checkpoint.
+
+## Listing Price Revision
+
+- [x] Audit the centralized price source and all on-page open-house date references.
+- [x] Update the asking price to $379,900.
+- [x] Remove the open-house date from visible listing copy and promotional modules.
+- [x] Run TypeScript validation and the production build.
+- [x] Verify the updated price and date-free presentation in the desktop preview.
+- [x] Save and deliver the synchronized GitHub-ready checkpoint.

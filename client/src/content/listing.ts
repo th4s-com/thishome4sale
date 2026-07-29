@@ -9,18 +9,14 @@ export type ListingStatus = "for-sale" | "coming-soon";
 export const listing = {
   status: "for-sale" as ListingStatus,
   label: "For Sale By Owner",
-  price: "$399,900",
+  price: "$379,900",
   address: {
     street: "1210 Miremont Drive",
     cityStateZip: "Ballwin, Missouri 63011",
   },
   openHouse: {
     enabled: true,
-    date: "Sunday, July 19",
     time: "1:00–3:00 PM",
-    weekday: "Sunday",
-    month: "JULY",
-    day: "19",
   },
   facts: [
     { value: "3", label: "Bedrooms" },
