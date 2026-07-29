@@ -82,3 +82,14 @@
 - [x] Run TypeScript validation and the production build.
 - [x] Verify the updated price and date-free presentation in the desktop preview.
 - [x] Save and deliver the synchronized GitHub-ready checkpoint.
+
+## Remove Current Open-House Information
+
+- [x] Audit all open-house references, navigation targets, metadata, and related layouts.
+- [x] Disable the active open-house state while preserving future-event fields in the content model.
+- [x] Remove the banner and current open-house visit module from the rendered listing.
+- [x] Replace any orphaned navigation or promotional paths with an appropriate non-event destination.
+- [x] Remove the remaining legacy event date-and-time record from the property facts strip.
+- [x] Run TypeScript validation and the production build.
+- [x] Verify the open-house-free listing on desktop and mobile.
+- [x] Save and deliver the synchronized GitHub-ready checkpoint.

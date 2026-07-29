@@ -217,7 +217,7 @@
 .visit__actions { display: flex; align-items: center; gap: 1.6rem; margin-top: 3rem; }
 .visit__actions > span { font: 600 1.5rem/1 "Barlow Condensed", sans-serif; }
 
-.property-record { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--cream); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.property-record { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--cream); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 .property-record__item { min-height: 145px; padding: 1.8rem 2vw; border-right: 1px solid var(--rule); display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem; }
 .property-record__item:last-child { border-right: 0; }
 .property-record__item span { color: #687681; font-size: .56rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
@@ -315,9 +315,6 @@
   .location { padding-right: 6vw; padding-bottom: 6vw; }
   .location__graphic { min-height: 480px; }
   .offer, .contact-section { grid-template-columns: 1fr; }
-  .property-record { grid-template-columns: repeat(2, 1fr); }
-  .property-record__item:nth-child(2) { border-right: 0; }
-  .property-record__item:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
   .offer__details { max-width: 620px; }
   .final-cta::after { width: 15vw; }
   .final-cta__mark { right: -3vw; opacity: .35; }

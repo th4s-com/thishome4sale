@@ -15,8 +15,8 @@ export const listing = {
     cityStateZip: "Ballwin, Missouri 63011",
   },
   openHouse: {
-    enabled: true,
-    time: "1:00–3:00 PM",
+    enabled: false,
+    time: "",
   },
   facts: [
     { value: "3", label: "Bedrooms" },
@@ -54,7 +54,6 @@ export const listing = {
   neighborhood: "West County · Parkway community",
   record: [
     { label: "Sale route", value: "Direct from owner" },
-    { label: "Open house", value: "Sun · Jul 19 · 1–3 PM" },
     { label: "School community", value: "Parkway" },
     { label: "Offer documentation", value: "Pre-approval / funds" },
   ],

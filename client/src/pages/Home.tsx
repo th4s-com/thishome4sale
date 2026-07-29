@@ -264,26 +264,28 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="visit section-pad" id="visit">
-          <div className="visit__date">
-            <p className="section-index">05 / OPEN HOUSE</p>
-            <div className="visit__marker" aria-hidden="true">
-              <span>OPEN</span>
-              <strong>HOUSE</strong>
+        {listing.openHouse.enabled && (
+          <section className="visit section-pad" id="visit">
+            <div className="visit__date">
+              <p className="section-index">05 / OPEN HOUSE</p>
+              <div className="visit__marker" aria-hidden="true">
+                <span>OPEN</span>
+                <strong>HOUSE</strong>
+              </div>
             </div>
-          </div>
-          <div className="visit__copy">
-            <p className="eyebrow">Open House</p>
-            <h2>See it in person.</h2>
-            <p>Tour the renovation, walk the layout, and explore the established West County neighborhood in person.</p>
-            <div className="visit__actions">
-              <a className="button button--green" href={listing.mapUrl} target="_blank" rel="noreferrer">
-                Get directions <ExternalLink size={17} />
-              </a>
-              <span>{listing.openHouse.time}</span>
+            <div className="visit__copy">
+              <p className="eyebrow">Open House</p>
+              <h2>See it in person.</h2>
+              <p>Tour the renovation, walk the layout, and explore the established West County neighborhood in person.</p>
+              <div className="visit__actions">
+                <a className="button button--green" href={listing.mapUrl} target="_blank" rel="noreferrer">
+                  Get directions <ExternalLink size={17} />
+                </a>
+                <span>{listing.openHouse.time}</span>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         <section className="property-record" aria-label="Buyer property record">
           {listing.record.map((item, index) => (
@@ -295,7 +297,7 @@ export default function Home() {
         </section>
 
         <section className="offer section-pad">
-          <p className="section-index">07 / OFFER GUIDELINES</p>
+          <p className="section-index">05 / OFFER GUIDELINES</p>
           <div>
             <h2>Prepared offers<br />move efficiently.</h2>
           </div>
@@ -324,7 +326,7 @@ export default function Home() {
 
         <section className="contact-section section-pad" id="contact">
           <div className="contact-section__intro">
-            <p className="section-index section-index--light">08 / CONTACT OWNER</p>
+            <p className="section-index section-index--light">06 / CONTACT OWNER</p>
             <p className="eyebrow eyebrow--green">For Sale By Owner</p>
             <h2>Ask about<br />1210 Miremont.</h2>
             <p>Request a private showing, ask a property question, or begin a conversation about submitting an offer directly with the owner.</p>
