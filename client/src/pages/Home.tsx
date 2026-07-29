@@ -13,6 +13,7 @@ import {
   CalendarDays,
   Check,
   Copy,
+  Download,
   ExternalLink,
   Images,
   MapPin,
@@ -170,9 +171,14 @@ export default function Home() {
             </div>
             <div className="hero__bottom">
               <p className="price">{listing.price}</p>
-              <a className="button button--green" href="#contact">
-                Contact the owner <ArrowDown size={18} />
-              </a>
+              <div className="hero__actions">
+                <a className="button button--green" href="#contact">
+                  Contact the owner <ArrowDown size={18} />
+                </a>
+                <a className="button button--ghost" href={listing.brochure.href} download>
+                  {listing.brochure.label} <Download size={17} />
+                </a>
+              </div>
             </div>
           </div>
           <button className="hero__image" onClick={() => setPhotoIndex(0)} aria-label="Open property photo gallery">

@@ -18,6 +18,10 @@ export const listing = {
     enabled: false,
     time: "",
   },
+  brochure: {
+    href: "/downloads/1210-miremont-drive-zillow-property-brochure.pdf",
+    label: "Download printable PDF",
+  },
   facts: [
     { value: "3", label: "Bedrooms" },
     { value: "2.5", label: "Bathrooms" },

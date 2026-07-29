@@ -93,3 +93,14 @@
 - [x] Run TypeScript validation and the production build.
 - [x] Verify the open-house-free listing on desktop and mobile.
 - [x] Save and deliver the synchronized GitHub-ready checkpoint.
+
+## Zillow PDF and Cloudflare Download Link
+
+- [x] Locate the source Zillow listing and document the permitted information to use.
+- [x] Confirm Zillow facts as the source for the PDF and Cloudflare Pages as the hosting approach.
+- [x] Confirm a standard letter-size printable PDF layout.
+- [x] Prepare a buyer-facing property PDF with source attribution.
+- [x] Select a Cloudflare-compatible PDF hosting approach and upload the final file.
+- [x] Add a clearly labeled download link to the listing page.
+- [x] Validate the document link, production build, and responsive presentation.
+- [x] Save and deliver the synchronized GitHub-ready checkpoint and hosting guidance.

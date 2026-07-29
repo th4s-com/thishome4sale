@@ -128,12 +128,15 @@
 .hero h1 { font: 600 clamp(3.5rem, 7.1vw, 8rem)/.84 "Barlow Condensed", sans-serif; letter-spacing: -.035em; text-transform: uppercase; max-width: 8ch; }
 .hero h1 span { display: block; margin-top: 1.4rem; font: 600 clamp(.9rem, 1.3vw, 1.2rem)/1.2 "Manrope", sans-serif; letter-spacing: .08em; text-transform: none; color: rgba(255,255,255,.58); }
 .hero__bottom { display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+.hero__actions { display: flex; flex-direction: column; align-items: flex-start; gap: .7rem; }
 .price { font: 600 clamp(2.5rem, 4.8vw, 5.2rem)/1 "Barlow Condensed", sans-serif; letter-spacing: -.02em; }
 .button { min-height: 50px; padding: .9rem 1.1rem; border: 0; display: inline-flex; align-items: center; justify-content: center; gap: .7rem; text-decoration: none; font: 800 .72rem/1 "Manrope", sans-serif; letter-spacing: .09em; text-transform: uppercase; transition: transform 160ms var(--ease-out), background 180ms var(--ease-out), color 180ms; }
 .button--green { background: var(--green); color: var(--navy); }
 .button--green:hover { background: #68ef77; transform: translateY(-2px); }
 .button--navy { background: var(--navy); color: var(--cream); }
 .button--navy:hover { background: var(--navy-2); transform: translateY(-2px); }
+.button--ghost { border: 1px solid rgba(255,255,255,.44); background: transparent; color: var(--cream); }
+.button--ghost:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); }
 .hero__image { border: 0; padding: 0; position: relative; overflow: hidden; background: #0d1d2b; min-height: 600px; }
 .hero__image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 58%, rgba(7,20,31,.48)); pointer-events: none; }
 .hero__image img { width: 100%; height: 100%; object-fit: cover; transition: transform 700ms var(--ease-out); }
@@ -330,6 +333,8 @@
   .open-house-bar__time { grid-column: 1 / -1; min-height: 62px; min-width: 0; padding: 0 1rem; font-size: 1.05rem; }
   .open-house-bar__link { display: none; }
   .hero__copy { padding: 3.5rem 1.25rem 2.5rem; min-height: 500px; }
+  .hero__actions { width: 100%; }
+  .hero__actions .button { width: 100%; }
   .hero h1 { font-size: clamp(3.9rem, 18vw, 5.6rem); }
   .hero__image { min-height: 96vw; }
   .hero__image-label { right: .9rem; bottom: .9rem; }
