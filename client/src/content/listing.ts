@@ -85,6 +85,13 @@ export const listing = {
     buyerAgentCompensation: {
       title: "Buyer's Agent Compensation",
       details: "Buyer agents are welcome.",
+      listedBy: {
+        title: "Listed by",
+        name: "Beth Muckerman",
+        phone: "314-452-4891",
+        phoneHref: "tel:+13144524891",
+        brokerage: "Worth Clark Realty",
+      },
     },
   },
   logo: "/images/logo.png",

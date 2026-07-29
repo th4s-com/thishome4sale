@@ -234,6 +234,12 @@
 .offer__requirements span { display: block; margin-bottom: .65rem; color: #687681; font-size: .56rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
 .offer__requirements strong { display: block; color: var(--navy); font: 600 clamp(1.35rem, 2vw, 1.85rem)/1.05 "Barlow Condensed", sans-serif; text-transform: uppercase; }
 .offer__requirements address, .offer__requirements article > p { margin-top: .65rem; color: #53616b; font-size: .82rem; font-style: normal; line-height: 1.7; }
+.offer__agent { margin-top: 1.15rem; padding-top: 1rem; border-top: 1px solid rgba(19,40,61,.2); }
+.offer__agent span { margin-bottom: .45rem; }
+.offer__agent strong { font-size: clamp(1.1rem, 1.6vw, 1.42rem); }
+.offer__agent a { display: inline-block; margin-top: .55rem; color: var(--navy); font: 700 .85rem/1 "Barlow Condensed", sans-serif; letter-spacing: .08em; text-decoration: none; }
+.offer__agent a:hover { color: #227d34; text-decoration: underline; text-underline-offset: .22em; }
+.offer__agent p { margin-top: .32rem; color: #53616b; font-size: .76rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
 .final-cta { min-height: 660px; background: var(--navy); color: var(--cream); position: relative; overflow: hidden; display: flex; align-items: center; }
 .final-cta::after { content: ""; width: 22vw; height: 100%; background: var(--green); position: absolute; right: 0; top: 0; }
 .final-cta__mark { position: absolute; right: 4vw; bottom: -3vw; z-index: 1; color: var(--navy); font: 700 clamp(8rem, 22vw, 22rem)/.8 "Barlow Condensed", sans-serif; letter-spacing: -.08em; writing-mode: vertical-rl; transform: rotate(180deg); opacity: .94; }

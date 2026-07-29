@@ -138,3 +138,10 @@
 - [x] Compile, verify, and visually inspect the printable one-page PDF.
 - [x] Replace the hosted Pages PDF and validate the listing download link.
 - [x] Save and deliver the synchronized GitHub-ready checkpoint.
+
+## Listing-Agent Contact Addition
+
+- [x] Audit the existing buyer-agent message and surrounding offer-guideline layout.
+- [x] Add Beth Muckerman’s listing-agent contact details below the buyer-agent welcome message.
+- [x] Validate the production build and desktop/mobile presentation.
+- [x] Save and deliver the synchronized GitHub-ready checkpoint.

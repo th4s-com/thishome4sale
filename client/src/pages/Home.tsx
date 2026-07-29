@@ -326,6 +326,14 @@ export default function Home() {
               <article>
                 <span>{listing.offerGuidelines.buyerAgentCompensation.title}</span>
                 <strong>{listing.offerGuidelines.buyerAgentCompensation.details}</strong>
+                <div className="offer__agent">
+                  <span>{listing.offerGuidelines.buyerAgentCompensation.listedBy.title}</span>
+                  <strong>{listing.offerGuidelines.buyerAgentCompensation.listedBy.name}</strong>
+                  <a href={listing.offerGuidelines.buyerAgentCompensation.listedBy.phoneHref}>
+                    {listing.offerGuidelines.buyerAgentCompensation.listedBy.phone}
+                  </a>
+                  <p>{listing.offerGuidelines.buyerAgentCompensation.listedBy.brokerage}</p>
+                </div>
               </article>
             </div>
           </div>
