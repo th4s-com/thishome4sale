@@ -4,12 +4,17 @@
  * Set status to "for-sale" or "coming-soon", then update the fields below.
  */
 
-export type ListingStatus = "for-sale" | "coming-soon";
+export type ListingStatus = "for-sale" | "under-contract" | "coming-soon";
 
 export const listing = {
-  status: "for-sale" as ListingStatus,
-  label: "For Sale By Owner",
+  status: "under-contract" as ListingStatus,
+  label: "Under Contract",
   price: "$379,900",
+  contractNotice: {
+    eyebrow: "Listing status",
+    title: "Under Contract",
+    details: "This property is currently under contract. Please contact the listing agent with any status inquiries.",
+  },
   address: {
     street: "1210 Miremont Drive",
     cityStateZip: "Ballwin, Missouri 63011",

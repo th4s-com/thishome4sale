@@ -152,3 +152,10 @@
 - [x] Replace the Zillow QR image and rebuild the one-page brochure.
 - [x] Verify the printable PDF and replace the hosted Pages asset.
 - [x] Save and deliver the synchronized GitHub-ready checkpoint.
+
+## Under Contract Status Notice
+
+- [x] Audit the current listing status and top-of-page presentation.
+- [x] Add a professional Under Contract notice near the top of the listing.
+- [x] Validate the production build and desktop/mobile status presentation.
+- [x] Save and deliver the synchronized GitHub-ready checkpoint.

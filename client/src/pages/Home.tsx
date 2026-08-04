@@ -95,11 +95,16 @@ export default function Home() {
   const [photoIndex, setPhotoIndex] = useState<number | null>(null);
 
   useEffect(() => {
+    const isUnderContract = listing.status === "under-contract";
     const description = listing.status === "coming-soon"
       ? listing.comingSoon.text
+      : isUnderContract
+        ? `Under contract · ${listing.address.street}, ${listing.address.cityStateZip}. Please contact the listing agent with status inquiries.`
       : `${listing.price} · 3 bedrooms · 2.5 bathrooms · approximately 1,400 sq. ft. · Basement bonus room.`;
     document.title = listing.status === "coming-soon"
       ? "A New Renovation Is Coming Soon | ThisHome4Sale.com"
+      : isUnderContract
+        ? `${listing.address.street} | Under Contract`
       : `${listing.address.street} | For Sale By Owner`;
     document.querySelector('meta[name="description"]')?.setAttribute("content", description);
     document.querySelector('meta[property="og:title"]')?.setAttribute("content", document.title);
@@ -129,7 +134,9 @@ export default function Home() {
       numberOfBathroomsTotal: 2.5,
       floorSize: { "@type": "QuantitativeValue", value: 1400, unitCode: "FTK" },
       yearBuilt: 1965,
-      offers: { "@type": "Offer", price: 399900, priceCurrency: "USD", availability: "https://schema.org/InStock" },
+      ...(listing.status === "for-sale" ? {
+        offers: { "@type": "Offer", price: 399900, priceCurrency: "USD", availability: "https://schema.org/InStock" },
+      } : {}),
     };
     const script = document.createElement("script");
     script.type = "application/ld+json";
@@ -150,6 +157,17 @@ export default function Home() {
     <div className="site-shell" id="top">
       <BrandHeader />
       <main>
+        {listing.status === "under-contract" && (
+          <section className="contract-notice" aria-label="Listing status" role="status">
+            <div className="contract-notice__inner">
+              <span className="contract-notice__eyebrow">{listing.contractNotice.eyebrow}</span>
+              <div className="contract-notice__copy">
+                <strong>{listing.contractNotice.title}</strong>
+                <p>{listing.contractNotice.details}</p>
+              </div>
+            </div>
+          </section>
+        )}
         {listing.openHouse.enabled && (
           <a className="open-house-bar" href="#visit">
             <span className="open-house-bar__label">
