@@ -38,9 +38,13 @@ function BrandHeader({ comingSoon = false }: { comingSoon?: boolean }) {
             <a href="#location">Location</a>
             <a href={listing.brochure.href} download>{listing.brochure.headerLabel}</a>
           </nav>
-          <a className="header-cta" href="#contact">
-            Contact owner <ArrowDown size={15} />
-          </a>
+          {listing.status === "sold" ? (
+            <span className="header-cta header-cta--status">{listing.statusNotice.ctaLabel}</span>
+          ) : (
+            <a className="header-cta" href="#contact">
+              Contact owner <ArrowDown size={15} />
+            </a>
+          )}
         </>
       )}
     </header>
@@ -99,8 +103,8 @@ export default function Home() {
     const description = listing.status === "coming-soon"
       ? listing.comingSoon.text
       : hasStatusNotice
-        ? `${listing.label} · ${listing.address.street}, ${listing.address.cityStateZip}. Please contact the listing agent with status inquiries.`
-      : `${listing.price} · 3 bedrooms · 2.5 bathrooms · approximately 1,400 sq. ft. · Basement bonus room.`;
+        ? `${listing.label} · ${listing.address.street}, ${listing.address.cityStateZip}. ${listing.status === "sold" ? `${listing.statusNotice.updated.searchDescription} ` : ""}Please contact the listing agent with status inquiries.`
+        : `${listing.price} · 3 bedrooms · 2.5 bathrooms · approximately 1,400 sq. ft. · Basement bonus room.`;
     document.title = listing.status === "coming-soon"
       ? "A New Renovation Is Coming Soon | ThisHome4Sale.com"
       : hasStatusNotice
@@ -134,6 +138,7 @@ export default function Home() {
       numberOfBathroomsTotal: 2.5,
       floorSize: { "@type": "QuantitativeValue", value: 1400, unitCode: "FTK" },
       yearBuilt: 1965,
+      ...(listing.status === "sold" ? { dateModified: listing.statusNotice.updated.isoDate } : {}),
       ...(listing.status === "for-sale" ? {
         offers: { "@type": "Offer", price: 399900, priceCurrency: "USD", availability: "https://schema.org/InStock" },
       } : {}),
@@ -163,7 +168,12 @@ export default function Home() {
               <span className="contract-notice__eyebrow">{listing.statusNotice.eyebrow}</span>
               <div className="contract-notice__copy">
                 <strong>{listing.statusNotice.title}</strong>
-                <p>{listing.statusNotice.details}</p>
+                <div>
+                  <p>{listing.statusNotice.details}</p>
+                  {listing.status === "sold" && (
+                    <time dateTime={listing.statusNotice.updated.isoDate}>{listing.statusNotice.updated.label}</time>
+                  )}
+                </div>
               </div>
             </div>
           </section>
@@ -191,9 +201,13 @@ export default function Home() {
             <div className="hero__bottom">
               <p className="price">{listing.price}</p>
               <div className="hero__actions">
-                <a className="button button--green" href="#contact">
-                  Contact the owner <ArrowDown size={18} />
-                </a>
+                {listing.status === "sold" ? (
+                  <span className="button button--green button--status">{listing.statusNotice.ctaLabel}</span>
+                ) : (
+                  <a className="button button--green" href="#contact">
+                    Contact the owner <ArrowDown size={18} />
+                  </a>
+                )}
                 <a className="button button--ghost" href={listing.brochure.href} download>
                   {listing.brochure.label} <Download size={17} />
                 </a>
@@ -379,9 +393,13 @@ export default function Home() {
         <p>© 2026 ThisHome4Sale.com</p>
       </footer>
 
-      <a className="mobile-cta" href="#contact">
-        Contact owner <ArrowDown size={17} />
-      </a>
+      {listing.status === "sold" ? (
+        <span className="mobile-cta mobile-cta--status">{listing.statusNotice.ctaLabel}</span>
+      ) : (
+        <a className="mobile-cta" href="#contact">
+          Contact owner <ArrowDown size={17} />
+        </a>
+      )}
 
       <PhotoLightbox images={listing.images} index={photoIndex} onChange={setPhotoIndex} />
     </div>

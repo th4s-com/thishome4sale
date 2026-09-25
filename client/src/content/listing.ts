@@ -14,6 +14,12 @@ export const listing = {
     eyebrow: "Listing status",
     title: "Sold",
     details: "This property has been sold. Please contact the listing agent with any status inquiries.",
+    updated: {
+      isoDate: "2026-09-25",
+      label: "Sold update · September 25, 2026",
+      searchDescription: "Status updated September 25, 2026.",
+    },
+    ctaLabel: "Property sold",
   },
   address: {
     street: "1210 Miremont Drive",

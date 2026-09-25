@@ -114,6 +114,8 @@
 .header-status { color: var(--green); font-size: .66rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 .header-cta { display: inline-flex; align-items: center; gap: .55rem; color: var(--navy); background: var(--green); padding: .8rem 1rem; text-decoration: none; font-size: .76rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; transition: transform 160ms var(--ease-out), background 180ms; }
 .header-cta:hover { background: #62ef74; transform: translateY(-2px); }
+.header-cta--status, .button--status, .mobile-cta--status { cursor: default; }
+.header-cta--status:hover, .button--status:hover { background: var(--green); transform: none; }
 .header-cta:active, .button:active, .icon-button:active { transform: scale(.97); }
 
 .contract-notice { background: var(--cream); border-bottom: 1px solid var(--rule); color: var(--navy); }
@@ -121,7 +123,9 @@
 .contract-notice__eyebrow { align-self: stretch; padding: .8rem 1rem; display: inline-flex; align-items: center; justify-content: center; background: var(--navy); color: var(--green); font-size: .58rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
 .contract-notice__copy { display: flex; align-items: baseline; gap: 1rem; }
 .contract-notice__copy strong { color: var(--navy); font: 700 clamp(1.35rem, 2vw, 1.8rem)/1 "Barlow Condensed", sans-serif; letter-spacing: .035em; text-transform: uppercase; white-space: nowrap; }
+.contract-notice__copy > div { display: grid; gap: .32rem; }
 .contract-notice__copy p { color: #53616b; font-size: .78rem; line-height: 1.45; max-width: 65ch; }
+.contract-notice__copy time { color: #65717a; font-size: .57rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 
 .open-house-bar { min-height: 84px; padding: 0 4vw; background: var(--green); color: var(--navy); display: flex; align-items: stretch; justify-content: flex-start; text-decoration: none; text-transform: uppercase; }
 .open-house-bar__label { padding-right: 2rem; display: flex; align-items: center; gap: .65rem; border-right: 1px solid rgba(19,40,61,.25); font-size: .7rem; font-weight: 800; letter-spacing: .14em; }
