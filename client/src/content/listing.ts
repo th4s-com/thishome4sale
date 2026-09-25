@@ -1,19 +1,19 @@
 /**
  * RENOVATION LEDGER CONTENT FILE
  * This is the only file that normally needs editing when a property changes.
- * Set status to "for-sale" or "coming-soon", then update the fields below.
+ * Set status to "for-sale", "under-contract", "sold", or "coming-soon", then update the fields below.
  */
 
-export type ListingStatus = "for-sale" | "under-contract" | "coming-soon";
+export type ListingStatus = "for-sale" | "under-contract" | "sold" | "coming-soon";
 
 export const listing = {
-  status: "under-contract" as ListingStatus,
-  label: "Under Contract",
+  status: "sold" as ListingStatus,
+  label: "Sold",
   price: "$379,900",
-  contractNotice: {
+  statusNotice: {
     eyebrow: "Listing status",
-    title: "Under Contract",
-    details: "This property is currently under contract. Please contact the listing agent with any status inquiries.",
+    title: "Sold",
+    details: "This property has been sold. Please contact the listing agent with any status inquiries.",
   },
   address: {
     street: "1210 Miremont Drive",

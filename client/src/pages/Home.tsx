@@ -95,16 +95,16 @@ export default function Home() {
   const [photoIndex, setPhotoIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    const isUnderContract = listing.status === "under-contract";
+    const hasStatusNotice = listing.status === "under-contract" || listing.status === "sold";
     const description = listing.status === "coming-soon"
       ? listing.comingSoon.text
-      : isUnderContract
-        ? `Under contract · ${listing.address.street}, ${listing.address.cityStateZip}. Please contact the listing agent with status inquiries.`
+      : hasStatusNotice
+        ? `${listing.label} · ${listing.address.street}, ${listing.address.cityStateZip}. Please contact the listing agent with status inquiries.`
       : `${listing.price} · 3 bedrooms · 2.5 bathrooms · approximately 1,400 sq. ft. · Basement bonus room.`;
     document.title = listing.status === "coming-soon"
       ? "A New Renovation Is Coming Soon | ThisHome4Sale.com"
-      : isUnderContract
-        ? `${listing.address.street} | Under Contract`
+      : hasStatusNotice
+        ? `${listing.address.street} | ${listing.label}`
       : `${listing.address.street} | For Sale By Owner`;
     document.querySelector('meta[name="description"]')?.setAttribute("content", description);
     document.querySelector('meta[property="og:title"]')?.setAttribute("content", document.title);
@@ -157,13 +157,13 @@ export default function Home() {
     <div className="site-shell" id="top">
       <BrandHeader />
       <main>
-        {listing.status === "under-contract" && (
+        {(listing.status === "under-contract" || listing.status === "sold") && (
           <section className="contract-notice" aria-label="Listing status" role="status">
             <div className="contract-notice__inner">
-              <span className="contract-notice__eyebrow">{listing.contractNotice.eyebrow}</span>
+              <span className="contract-notice__eyebrow">{listing.statusNotice.eyebrow}</span>
               <div className="contract-notice__copy">
-                <strong>{listing.contractNotice.title}</strong>
-                <p>{listing.contractNotice.details}</p>
+                <strong>{listing.statusNotice.title}</strong>
+                <p>{listing.statusNotice.details}</p>
               </div>
             </div>
           </section>
