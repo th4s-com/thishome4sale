@@ -159,3 +159,12 @@
 - [x] Add a professional Under Contract notice near the top of the listing.
 - [x] Validate the production build and desktop/mobile status presentation.
 - [x] Save and deliver the synchronized GitHub-ready checkpoint.
+
+## New Project Homepage and Sold Project Archive
+
+- [x] Create a new homepage for the upcoming project with a clear path to prior sold work.
+- [x] Move 1210 Miremont Drive to a dedicated, indexable Sold Projects archive route.
+- [x] Replace sales-oriented inquiry and offer content with completed-project archival context.
+- [x] Add route-specific search and social metadata with structured data for the upcoming project and sold archive.
+- [x] Validate desktop and mobile layouts, TypeScript, production build, and route navigation.
+- [ ] Save a synchronized checkpoint for GitHub and Cloudflare Pages.

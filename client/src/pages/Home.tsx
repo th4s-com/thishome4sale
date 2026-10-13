@@ -1,407 +1,80 @@
-/**
- * RENOVATION LEDGER PAGE
- * Editorial asymmetry, evidence-first copy, large real property photography,
- * Oxford navy, warm paper, and disciplined renovation-green accents.
- */
+import SiteHeader from "@/components/SiteHeader";
+import { ArrowDown, ArrowUpRight, Images } from "lucide-react";
+import { useEffect } from "react";
 
-import ContactForm from "@/components/ContactForm";
-import PhotoLightbox from "@/components/PhotoLightbox";
-import { listing } from "@/content/listing";
-import {
-  ArrowDown,
-  ArrowUpRight,
-  CalendarDays,
-  Check,
-  Copy,
-  Download,
-  ExternalLink,
-  Images,
-  MapPin,
-  Share2,
-} from "lucide-react";
-import { useEffect, useState } from "react";
-import { toast } from "sonner";
-
-function BrandHeader({ comingSoon = false }: { comingSoon?: boolean }) {
-  return (
-    <header className="site-header">
-      <a className="brand" href="#top" aria-label="This Home 4 Sale home">
-        <img src={listing.logo} alt="This Home 4 Sale" />
-      </a>
-      {comingSoon ? (
-        <span className="header-status">Next home in progress</span>
-      ) : (
-        <>
-          <nav aria-label="Primary navigation">
-            <a href="#details">Details</a>
-            <a href="#gallery">Photos</a>
-            <a href="#location">Location</a>
-            <a href={listing.brochure.href} download>{listing.brochure.headerLabel}</a>
-          </nav>
-          {listing.status === "sold" ? (
-            <span className="header-cta header-cta--status">{listing.statusNotice.ctaLabel}</span>
-          ) : (
-            <a className="header-cta" href="#contact">
-              Contact owner <ArrowDown size={15} />
-            </a>
-          )}
-        </>
-      )}
-    </header>
-  );
-}
-
-function ComingSoon() {
-  const share = async () => {
-    const data = {
-      title: "A new ThisHome4Sale.com renovation is coming soon",
-      text: listing.comingSoon.text,
-      url: window.location.href,
-    };
-    try {
-      if (navigator.share) await navigator.share(data);
-      else {
-        await navigator.clipboard.writeText(window.location.href);
-        toast.success("Page link copied");
-      }
-    } catch {
-      // Closing the native share sheet is not an error the visitor needs to see.
-    }
-  };
-
-  return (
-    <div className="coming-soon" id="top">
-      <BrandHeader comingSoon />
-      <main className="coming-soon__main">
-        <img className="coming-soon__image" src={listing.comingSoon.image} alt="Architectural renovation materials and plans" />
-        <div className="coming-soon__overlay" />
-        <div className="coming-soon__content">
-          <p className="eyebrow">{listing.comingSoon.eyebrow}</p>
-          <h1>{listing.comingSoon.headline}</h1>
-          <p className="coming-soon__text">{listing.comingSoon.text}</p>
-          <div className="coming-soon__actions">
-            <button className="button button--green" onClick={share}>
-              Share this page <Share2 size={17} />
-            </button>
-            <a className="text-link" href="mailto:?subject=A%20new%20ThisHome4Sale.com%20property%20is%20coming%20soon&body=https%3A%2F%2Fthishome4sale.com">
-              Tell a friend <ArrowUpRight size={15} />
-            </a>
-          </div>
-        </div>
-        <div className="coming-soon__meter" aria-hidden="true"><span /></div>
-      </main>
-      <footer className="simple-footer">© 2026 ThisHome4Sale.com · Home remodel, renovations and sales.</footer>
-    </div>
-  );
-}
+const upcomingProject = {
+  eyebrow: "The next project is taking shape",
+  headline: "New project\ncoming.",
+  description:
+    "We are preparing the next thoughtfully renovated home. Check back for the announcement when it is ready, or revisit a recently completed ThisHome4Sale project.",
+  image: "/images/coming-soon-renovation-collage.webp",
+};
 
 export default function Home() {
-  const [photoIndex, setPhotoIndex] = useState<number | null>(null);
-
   useEffect(() => {
-    const hasStatusNotice = listing.status === "under-contract" || listing.status === "sold";
-    const description = listing.status === "coming-soon"
-      ? listing.comingSoon.text
-      : hasStatusNotice
-        ? `${listing.label} · ${listing.address.street}, ${listing.address.cityStateZip}. ${listing.status === "sold" ? `${listing.statusNotice.updated.searchDescription} ` : ""}Please contact the listing agent with status inquiries.`
-        : `${listing.price} · 3 bedrooms · 2.5 bathrooms · approximately 1,400 sq. ft. · Basement bonus room.`;
-    document.title = listing.status === "coming-soon"
-      ? "A New Renovation Is Coming Soon | ThisHome4Sale.com"
-      : hasStatusNotice
-        ? `${listing.address.street} | ${listing.label}`
-      : `${listing.address.street} | For Sale By Owner`;
+    const title = "New Project Coming | ThisHome4Sale.com";
+    const description = "A new ThisHome4Sale renovation is in progress. Explore a recently sold project while the next address takes shape.";
+    document.title = title;
     document.querySelector('meta[name="description"]')?.setAttribute("content", description);
-    document.querySelector('meta[property="og:title"]')?.setAttribute("content", document.title);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
     document.querySelector('meta[property="og:description"]')?.setAttribute("content", description);
-    document.querySelector('meta[property="og:image"]')?.setAttribute(
-      "content",
-      listing.status === "coming-soon" ? listing.comingSoon.image : listing.images[0],
-    );
+    document.querySelector('meta[property="og:image"]')?.setAttribute("content", upcomingProject.image);
 
-    if (listing.status === "coming-soon") return;
-
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@type": "SingleFamilyResidence",
-      name: `${listing.label} — ${listing.address.street}`,
-      url: window.location.href,
-      image: listing.images,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: listing.address.street,
-        addressLocality: "Ballwin",
-        addressRegion: "MO",
-        postalCode: "63011",
-        addressCountry: "US",
-      },
-      numberOfBedrooms: 3,
-      numberOfBathroomsTotal: 2.5,
-      floorSize: { "@type": "QuantitativeValue", value: 1400, unitCode: "FTK" },
-      yearBuilt: 1965,
-      ...(listing.status === "sold" ? { dateModified: listing.statusNotice.updated.isoDate } : {}),
-      ...(listing.status === "for-sale" ? {
-        offers: { "@type": "Offer", price: 399900, priceCurrency: "USD", availability: "https://schema.org/InStock" },
-      } : {}),
-    };
     const script = document.createElement("script");
     script.type = "application/ld+json";
-    script.text = JSON.stringify(structuredData);
-    script.dataset.listingSchema = "true";
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "ThisHome4Sale.com",
+      url: window.location.href,
+      description,
+    });
+    script.dataset.projectSchema = "true";
     document.head.appendChild(script);
     return () => script.remove();
   }, []);
 
-  if (listing.status === "coming-soon") return <ComingSoon />;
-
-  const copyAddress = async () => {
-    await navigator.clipboard.writeText(`${listing.address.street}, ${listing.address.cityStateZip}`);
-    toast.success("Address copied");
-  };
-
   return (
-    <div className="site-shell" id="top">
-      <BrandHeader />
+    <div className="coming-soon" id="top">
+      <SiteHeader current="home" />
       <main>
-        {(listing.status === "under-contract" || listing.status === "sold") && (
-          <section className="contract-notice" aria-label="Listing status" role="status">
-            <div className="contract-notice__inner">
-              <span className="contract-notice__eyebrow">{listing.statusNotice.eyebrow}</span>
-              <div className="contract-notice__copy">
-                <strong>{listing.statusNotice.title}</strong>
-                <div>
-                  <p>{listing.statusNotice.details}</p>
-                  {listing.status === "sold" && (
-                    <time dateTime={listing.statusNotice.updated.isoDate}>{listing.statusNotice.updated.label}</time>
-                  )}
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
-        {listing.openHouse.enabled && (
-          <a className="open-house-bar" href="#visit">
-            <span className="open-house-bar__label">
-              <CalendarDays size={19} />
-              <strong>Open House</strong>
-            </span>
-            <span className="open-house-bar__time">{listing.openHouse.time}</span>
-            <span className="open-house-bar__link">View details <ArrowDown size={16} /></span>
-          </a>
-        )}
-
-        <section className="hero" aria-labelledby="property-address">
-          <div className="hero__copy">
-            <div>
-              <p className="eyebrow eyebrow--green">{listing.label}</p>
-              <h1 id="property-address">
-                {listing.address.street}
-                <span>{listing.address.cityStateZip}</span>
-              </h1>
-            </div>
-            <div className="hero__bottom">
-              <p className="price">{listing.price}</p>
-              <div className="hero__actions">
-                {listing.status === "sold" ? (
-                  <span className="button button--green button--status">{listing.statusNotice.ctaLabel}</span>
-                ) : (
-                  <a className="button button--green" href="#contact">
-                    Contact the owner <ArrowDown size={18} />
-                  </a>
-                )}
-                <a className="button button--ghost" href={listing.brochure.href} download>
-                  {listing.brochure.label} <Download size={17} />
-                </a>
-              </div>
-            </div>
-          </div>
-          <button className="hero__image" onClick={() => setPhotoIndex(0)} aria-label="Open property photo gallery">
-            <img src={listing.images[0]} alt={`Exterior of ${listing.address.street}`} />
-            <span className="hero__image-label"><Images size={16} /> View all {listing.images.length} photos</span>
-          </button>
-          <div className="hero__rail" aria-hidden="true"><span>TH4S / 001</span><span>WEST COUNTY</span></div>
-        </section>
-
-        <section className="fact-ledger" aria-label="Property facts">
-          {listing.facts.map((fact) => (
-            <div className="fact" key={fact.label}>
-              <strong>{fact.value}</strong>
-              <span>{fact.label}</span>
-            </div>
-          ))}
-        </section>
-
-        <section className="intro section-pad" id="details">
-          <div className="section-index">01 / THE PROPERTY</div>
-          <div className="intro__main">
-            <h2>{listing.headline}</h2>
-            <p>{listing.description}</p>
-          </div>
-          <div className="intro__note">
-            <span className="green-square"><Check size={16} /></span>
-            <p><strong>Move-in ready.</strong> The renovation is complete and the property is available directly from the owner.</p>
-          </div>
-        </section>
-
-        <section className="gallery section-pad" id="gallery">
-          <div className="gallery__heading">
-            <div>
-              <p className="section-index">02 / PHOTO RECORD</p>
-              <h2>See every finished space.</h2>
-            </div>
-            <button className="text-link" onClick={() => setPhotoIndex(0)}>
-              Open full gallery <Images size={17} />
-            </button>
-          </div>
-          <div className="photo-grid">
-            {listing.images.slice(0, 9).map((image, index) => (
-              <button className={`photo-grid__item photo-grid__item--${index + 1}`} onClick={() => setPhotoIndex(index)} key={image}>
-                <img src={image} alt={`Property photo ${index + 1}`} loading={index > 2 ? "lazy" : "eager"} />
-                <span>{String(index + 1).padStart(2, "0")}</span>
-              </button>
-            ))}
-          </div>
-          <button className="button button--navy gallery__more" onClick={() => setPhotoIndex(9)}>
-            View all {listing.images.length} photos <ArrowUpRight size={17} />
-          </button>
-        </section>
-
-        <section className="highlights section-pad">
-          <div className="highlights__title">
-            <p className="section-index section-index--light">03 / WHY THIS HOME</p>
-            <h2>Established neighborhood.<br />New point of view.</h2>
-          </div>
-          <div className="highlights__list">
-            {listing.highlights.map((highlight) => (
-              <article className="highlight" key={highlight.number}>
-                <span>{highlight.number}</span>
-                <h3>{highlight.title}</h3>
-                <p>{highlight.text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="location section-pad" id="location">
-          <div className="location__address">
-            <p className="section-index">04 / LOCATION</p>
-            <p className="eyebrow">{listing.neighborhood}</p>
-            <h2>At home in<br />West County.</h2>
-            <p><strong>Conveniently located in West County,</strong> with access to shopping, parks, commuter routes, and the Parkway school community.</p>
-            <div className="location__actions">
-              <a className="button button--navy" href={listing.mapUrl} target="_blank" rel="noreferrer">
-                Open in Maps <MapPin size={17} />
+        <section className="coming-soon__main" aria-labelledby="new-project-heading">
+          <img
+            className="coming-soon__image"
+            src={upcomingProject.image}
+            alt="Architectural renovation materials and plans"
+          />
+          <div className="coming-soon__overlay" />
+          <div className="coming-soon__content">
+            <p className="eyebrow eyebrow--green">{upcomingProject.eyebrow}</p>
+            <h1 id="new-project-heading">{upcomingProject.headline}</h1>
+            <p className="coming-soon__text">{upcomingProject.description}</p>
+            <div className="coming-soon__actions">
+              <a className="button button--green" href="/sold/1210-miremont-drive">
+                Explore sold projects <ArrowUpRight size={17} />
               </a>
-              <button className="icon-button" onClick={copyAddress} aria-label="Copy property address"><Copy size={17} /></button>
+              <a className="text-link" href="#project-record">
+                What we have sold <ArrowDown size={15} />
+              </a>
             </div>
           </div>
-          <div className="location__graphic" aria-hidden="true">
-            <div className="map-ring map-ring--one" />
-            <div className="map-ring map-ring--two" />
-            <div className="map-cross" />
-            <div className="map-pin"><span />1210</div>
-            <p>38.592° N<br />90.568° W</p>
-          </div>
+          <div className="coming-soon__meter" aria-hidden="true"><span /></div>
         </section>
 
-        {listing.openHouse.enabled && (
-          <section className="visit section-pad" id="visit">
-            <div className="visit__date">
-              <p className="section-index">05 / OPEN HOUSE</p>
-              <div className="visit__marker" aria-hidden="true">
-                <span>OPEN</span>
-                <strong>HOUSE</strong>
-              </div>
-            </div>
-            <div className="visit__copy">
-              <p className="eyebrow">Open House</p>
-              <h2>See it in person.</h2>
-              <p>Tour the renovation, walk the layout, and explore the established West County neighborhood in person.</p>
-              <div className="visit__actions">
-                <a className="button button--green" href={listing.mapUrl} target="_blank" rel="noreferrer">
-                  Get directions <ExternalLink size={17} />
-                </a>
-                <span>{listing.openHouse.time}</span>
-              </div>
-            </div>
-          </section>
-        )}
-
-        <section className="property-record" aria-label="Buyer property record">
-          {listing.record.map((item, index) => (
-            <div className="property-record__item" key={item.label}>
-              <span>{String(index + 1).padStart(2, "0")} / {item.label}</span>
-              <strong>{item.value}</strong>
-            </div>
-          ))}
-        </section>
-
-        <section className="offer section-pad">
-          <p className="section-index">05 / OFFER GUIDELINES</p>
+        <section className="project-ledger section-pad" id="project-record" aria-labelledby="project-record-heading">
           <div>
-            <h2>Prepared offers<br />move efficiently.</h2>
+            <p className="section-index">01 / PROJECT RECORD</p>
+            <h2 id="project-record-heading">Homes made<br />for what’s next.</h2>
           </div>
-          <div className="offer__details">
-            <div className="offer__requirements" aria-label="Financing, preferred title company, and buyer-agent information">
-              <article>
-                <span>{listing.offerGuidelines.financing.title}</span>
-                <p>{listing.offerGuidelines.financing.details}</p>
-              </article>
-              <article>
-                <span>{listing.offerGuidelines.titleCompany.title}</span>
-                <strong>{listing.offerGuidelines.titleCompany.name}</strong>
-                <address>
-                  {listing.offerGuidelines.titleCompany.office}<br />
-                  {listing.offerGuidelines.titleCompany.street}<br />
-                  {listing.offerGuidelines.titleCompany.cityStateZip}
-                </address>
-              </article>
-              <article>
-                <span>{listing.offerGuidelines.buyerAgentCompensation.title}</span>
-                <strong>{listing.offerGuidelines.buyerAgentCompensation.details}</strong>
-                <div className="offer__agent">
-                  <span>{listing.offerGuidelines.buyerAgentCompensation.listedBy.title}</span>
-                  <strong>{listing.offerGuidelines.buyerAgentCompensation.listedBy.name}</strong>
-                  <a href={listing.offerGuidelines.buyerAgentCompensation.listedBy.phoneHref}>
-                    {listing.offerGuidelines.buyerAgentCompensation.listedBy.phone}
-                  </a>
-                  <p>{listing.offerGuidelines.buyerAgentCompensation.listedBy.brokerage}</p>
-                </div>
-              </article>
-            </div>
+          <div className="project-ledger__copy">
+            <p>Every completed project remains part of the record. Explore past renovations, photographs, and property details while the next home is being prepared.</p>
+            <a className="text-link" href="/sold/1210-miremont-drive">
+              <Images size={16} /> View 1210 Miremont Drive
+            </a>
           </div>
-        </section>
-
-        <section className="contact-section section-pad" id="contact">
-          <div className="contact-section__intro">
-            <p className="section-index section-index--light">06 / CONTACT OWNER</p>
-            <p className="eyebrow eyebrow--green">For Sale By Owner</p>
-            <h2>Ask about<br />1210 Miremont.</h2>
-            <p>Request a private showing, ask a property question, or begin a conversation about submitting an offer directly with the owner.</p>
-            <div className="contact-section__record">
-              <span>{listing.price}</span>
-              <span>{listing.address.street}</span>
-              <span>Ballwin · Missouri</span>
-            </div>
-          </div>
-          <ContactForm />
         </section>
       </main>
-
-      <footer className="site-footer">
-        <img src={listing.logo} alt="This Home 4 Sale" />
-        <p>Home remodel, renovations and sales.</p>
-        <p>© 2026 ThisHome4Sale.com</p>
-      </footer>
-
-      {listing.status === "sold" ? (
-        <span className="mobile-cta mobile-cta--status">{listing.statusNotice.ctaLabel}</span>
-      ) : (
-        <a className="mobile-cta" href="#contact">
-          Contact owner <ArrowDown size={17} />
-        </a>
-      )}
-
-      <PhotoLightbox images={listing.images} index={photoIndex} onChange={setPhotoIndex} />
+      <footer className="simple-footer">© 2026 ThisHome4Sale.com · Home remodel, renovations and sales.</footer>
     </div>
   );
 }
